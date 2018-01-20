@@ -1,0 +1,52 @@
+{
+	"name" : "bulaohe/laravelswoole",
+	"type" : "package",
+	"description" : "Laravel 5.5 Swoole Package",
+	"keywords" : [
+		"laravel5.5 swoole",
+		"micro services"
+	],
+	"homepage" : "https://github.com/Bulaohe/laravelswoole",
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Simon Quan",
+			"email" : "qqmmmqq@gmail.com",
+			"homepage" : "https://github.com/Bulaohe",
+			"role" : "Developer"
+		}
+	],
+	"require" : {
+		"php" : ">=7.0"
+	},
+	"require-dev" : {
+		"phpunit/phpunit" : "~4.1",
+		"mockery/mockery" : "0.9.*"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"Mews\\Captcha\\" : "src/"
+		},
+		"files" : [
+			"src/helpers.php"
+		]
+	},
+	"autoload-dev" : {
+		"classmap" : [
+			"tests"
+		],
+		"psr-4" : {
+			"Mews\\Test\\" : "tests/"
+		}
+	},
+	"minimum-stability" : "dev",
+	"extra" : {
+		"laravel" : {
+			"providers" : [
+				"Mews\\Captcha\\CaptchaServiceProvider"
+			],
+			"aliases" : {
+				"Captcha" : "Mews\\Captcha\\Facades\\Captcha"
+			}
+		}
+	}
+}
