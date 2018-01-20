@@ -1,5 +1,5 @@
 <?php
-namespace Bulaohe\LaravelSwoole\Wrapper;
+namespace Bulaohe\Laravelswoole\Wrapper;
 
 use swoole_http_server;
 

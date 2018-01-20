@@ -1,6 +1,6 @@
 <?php
 
-namespace Bulaohe\LaravelSwoole\Facades;
+namespace Bulaohe\Laravelswoole\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

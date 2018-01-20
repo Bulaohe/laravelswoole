@@ -1,6 +1,6 @@
 <?php
 
-namespace Bulaohe\LaravelSwoole\Commands;
+namespace Bulaohe\Laravelswoole\Commands;
 
 use ReflectionClass;
 
@@ -21,7 +21,7 @@ class SwooleCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Start laravel swoole';
+    protected $description = 'Start laswoole';
 
     /**
      * The console command action.
@@ -64,7 +64,7 @@ class SwooleCommand extends Command
     protected function runAction()
     {
         $this->detectSwoole();
-        $this->{$this->action}();
+        $this->fire();
     }
     
     /**
@@ -141,13 +141,13 @@ class SwooleCommand extends Command
 
         $mode = config('swoole.base_config.mode');
         if (!$mode) {
-            echo "LaravelSwoole needs Swoole." . PHP_EOL .
+            echo "Laravelswoole needs Swoole." . PHP_EOL .
                 "You can install Swoole by command:" . PHP_EOL .
                 " pecl install swoole" . PHP_EOL;
             exit;
         }
 
-        $wrapper = "Bulaohe\\LaravelSwoole\\Wrapper\\SwooleHttpWrapper";
+        $wrapper = "Bulaohe\\Laravelswoole\\Wrapper\\SwooleHttpWrapper";
         
         $ref = new ReflectionClass($wrapper);
         $wrapper_file = $ref->getFileName();

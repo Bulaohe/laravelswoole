@@ -1,6 +1,6 @@
 <?php
 
-namespace Bulaohe\LaravelSwoole\Illuminate;
+namespace Bulaohe\Laravelswoole\Illuminate;
 
 use Illuminate\Http\Request as IlluminateRequest;
 use Illuminate\Http\UploadedFile;

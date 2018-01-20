@@ -13,6 +13,6 @@ spl_autoload_register(function ($class) {
 });
 $configs = unserialize($input);
 
-$server = new Bulaohe\LaravelSwoole\Server($configs['wrapper'], $configs['wrapper_file']);
+$server = new Bulaohe\Laravelswoole\Server($configs['wrapper'], $configs['wrapper_file']);
 
 $server->start($configs);

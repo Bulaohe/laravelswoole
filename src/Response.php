@@ -1,5 +1,5 @@
 <?php
-namespace Bulaohe\LaravelSwoole;
+namespace Bulaohe\Laravelswoole;
 
 class Response
 {

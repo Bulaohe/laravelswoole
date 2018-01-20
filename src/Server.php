@@ -1,10 +1,10 @@
 <?php
-namespace Bulaohe\LaravelSwoole;
+namespace Bulaohe\Laravelswoole;
 
 use Exception;
 use ReflectionClass;
 
-use Bulaohe\LaravelSwoole\Wrapper\ServerInterface;
+use Bulaohe\Laravelswoole\Wrapper\ServerInterface;
 
 class Server
 {
@@ -19,7 +19,7 @@ class Server
         }
         $ref = new ReflectionClass($wrapper);
         if(!$ref->implementsInterface(ServerInterface::class)) {
-            throw new Exception("$wrapper must be instance of Bulaohe\\LaravelSwoole\\Wrapper\\ServerInterface", 1);
+            throw new Exception("$wrapper must be instance of Bulaohe\\Laravelswoole\\Wrapper\\ServerInterface", 1);
         }
 
         $this->wrapper = $wrapper;

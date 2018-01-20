@@ -1,9 +1,9 @@
 <?php
-namespace Bulaohe\LaravelSwoole\Wrapper;
+namespace Bulaohe\Laravelswoole\Wrapper;
 
 use swoole_http_server;
 
-use Bulaohe\LaravelSwoole\Base;
+use Bulaohe\Laravelswoole\Base;
 use Exception;
 
 abstract class Swoole extends Base

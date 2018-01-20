@@ -1,5 +1,5 @@
 <?php
-namespace Bulaohe\LaravelSwoole;
+namespace Bulaohe\Laravelswoole;
 
 use Exception;
 

@@ -1,5 +1,5 @@
 <?php
-namespace Bulaohe\LaravelSwoole\Illuminate;
+namespace Bulaohe\Laravelswoole\Illuminate;
 
 class Application extends \Illuminate\Foundation\Application
 {
