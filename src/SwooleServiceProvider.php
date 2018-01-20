@@ -19,7 +19,7 @@ class SwooleServiceProvider extends ServiceProvider
         );
         
         $this->commands([
-            SwooleCommand::class,
+            Commands\SwooleCommand::class,
         ]);
     }
     

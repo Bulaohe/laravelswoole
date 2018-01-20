@@ -14,7 +14,7 @@ class SwooleCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'swoole {action : start | stop | reload | reload_task | restart | quit}';
+    protected $signature = 'laswoole {action : start | stop | reload | reload_task | restart | quit}';
 
     /**
      * The console command description.
@@ -24,6 +24,13 @@ class SwooleCommand extends Command
     protected $description = 'Start laravel swoole';
 
     /**
+     * The console command action.
+     *
+     * @var string
+     */
+    protected $action;
+    
+    /**
      * Create a new command instance.
      *
      * @return void
@@ -31,6 +38,44 @@ class SwooleCommand extends Command
     public function __construct()
     {
         parent::__construct();
+    }
+    
+    public function handle()
+    {
+        $this->initAction();
+        $this->runAction();
+    }
+    
+    /**
+     * Initialize command action.
+     */
+    protected function initAction()
+    {
+        $this->action = $this->argument('action');
+        if (! in_array($this->action, ['start', 'stop', 'restart', 'reload', 'quit'])) {
+            $this->error('Unexpected argument "' . $this->action . '".');
+            exit(1);
+        }
+    }
+    
+    /**
+     * Run action.
+     */
+    protected function runAction()
+    {
+        $this->detectSwoole();
+        $this->{$this->action}();
+    }
+    
+    /**
+     * Extension swoole is required.
+     */
+    protected function detectSwoole()
+    {
+        if (! extension_loaded('swoole')) {
+            $this->error('Extension swoole is required!');
+            exit(1);
+        }
     }
 
     /**
